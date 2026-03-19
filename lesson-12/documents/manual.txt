@@ -1,0 +1,52 @@
+ACME WIDGET PRO — USER MANUAL
+
+## Chapter 1: Installation
+
+The Widget Pro requires Python 3.10 or higher.
+Install with: pip install acme-widget-pro
+After installation, run: widget-pro init to create a config file.
+The config file is located at ~/.widget-pro/config.yaml
+
+## Chapter 2: Configuration
+
+The config file supports the following keys:
+- api_key: your Acme API key (required)
+- timeout: request timeout in seconds (default: 30)
+- retries: number of retries on failure (default: 3)
+- log_level: one of DEBUG, INFO, WARNING, ERROR (default: INFO)
+
+## Chapter 3: Basic Usage
+
+To create a widget:
+    from acme import Widget
+    w = Widget(name="my-widget", color="blue")
+    w.save()
+
+To list all widgets:
+    Widget.list_all()
+
+To delete a widget:
+    w.delete()
+
+## Chapter 4: Troubleshooting
+
+Error "API key not found": set the api_key in config.yaml or
+export ACME_API_KEY as an environment variable.
+
+Error "timeout": increase the timeout value in config.yaml.
+Default is 30 seconds. For large widgets, use 120 seconds.
+
+Error "rate limit exceeded": you are making too many requests.
+The free tier allows 100 requests per minute.
+Upgrade to Pro for 10,000 requests per minute.
+
+## Chapter 5: Advanced Features
+
+Widgets support custom hooks via the on_save and on_delete callbacks.
+Example:
+    def my_hook(widget):
+        print(f"Widget {widget.name} was saved")
+    w = Widget(name="x", on_save=my_hook)
+
+Batch operations are supported via Widget.batch_create(list_of_dicts).
+Batch operations are up to 10x faster than individual creates.
