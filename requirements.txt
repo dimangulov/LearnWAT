@@ -1,0 +1,18 @@
+# Core AI SDK
+anthropic
+
+# LangChain ecosystem (L11–L14)
+langchain
+langchain-anthropic
+langchain-core
+langchain-text-splitters
+langchain-community
+
+# LangGraph (L13+)
+langgraph
+
+# Pydantic (state validation)
+pydantic
+
+# Async HTTP (used by anthropic SDK)
+httpx
