@@ -33,7 +33,7 @@ Code files must:
 
 ## Environment
 
-- Python virtual environment: `c:\w\claude2\.venv`
+- Python virtual environment: `c:\w\LearnWAT\.venv`
 - Run scripts with: `.venv/Scripts/python lesson-XX/script.py`
 - Install packages with: `.venv/Scripts/pip install <package>`
 - Platform: Windows 11, shell: bash
