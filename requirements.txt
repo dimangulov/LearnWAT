@@ -7,6 +7,7 @@ langchain-anthropic
 langchain-core
 langchain-text-splitters
 langchain-community
+langgraph.checkpoint.sqlite
 
 # LangGraph (L13+)
 langgraph
